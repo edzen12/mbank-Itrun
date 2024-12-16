@@ -1,0 +1,28 @@
+.nav-pills a{
+    color: #000;
+}
+.nav-pills{
+    align-items: center;
+}
+.banner{
+    text-align: center;
+}
+.banner p{
+    color: #0046bd;
+    font-size: 50px;
+    font-weight: 900;
+}
+.h1P{
+    color: #0046bd;
+    font-weight: 900;
+    margin-bottom: 50px;
+}
+.banner li{
+    list-style-type: none;
+}
+.ALink{
+    text-decoration: none;
+    font-size: 30px;
+    color: #000;
+    font-weight: 700;
+}

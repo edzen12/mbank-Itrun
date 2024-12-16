@@ -1,0 +1,63 @@
+a{
+    text-decoration: none;
+}
+li{
+    list-style-type: none;
+}
+.menuLink{
+    font-size: 20px;
+    color: #0092a1;
+    text-transform: uppercase;
+}
+.cardImages{
+    height:300px; 
+    background-size:cover;
+    color: #fff;
+}
+.CardTITLE{
+    font-size: 30px;
+}
+.cardTExt{
+    font-size: 20px;
+}
+.cardImages a{
+    background-color: yellow;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    color: #000;
+}
+.inputSearch{
+    margin-top: 50px;
+}
+.inputSearch a{
+    color: gray;
+}
+.inputSearch input{
+    padding-left: 20px; 
+    padding-top: 10px; 
+    padding-bottom: 10px;
+    width: 400px;
+    border-radius: 10px;
+}
+.inputSearch button{
+    background-color: #fdd400;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+}
+.backgIMages{
+    background-image: url(images/back.png); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+.backgIMages ul{
+    display: flex;     
+    padding-left: 180px;
+    padding-top: 20px;
+}

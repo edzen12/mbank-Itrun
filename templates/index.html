@@ -1,0 +1,313 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MBANK</title>
+    <link href="{% static 'bootstrap.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+  </head>
+  <body>
+    
+    <!-- NAVIGATION -->
+     <div class="container-fluid">
+        <div class="row">
+            <div class="col-4" style="display: flex;">
+                <a href="index.html">
+                    <img src="images/Logo.svg" alt="">
+                </a>
+                <p style="padding-left:15px">ОАО «Коммерческий банк КЫРГЫЗСТАН»</p>
+            </div>
+            <div class="col-1">
+                <a href="" class="menuLink">
+                    <p>Физ. <br> лицам</p>
+                </a>
+            </div>
+            <div class="col-1">
+                <a href="" class="menuLink">
+                    <p>Юр. <br> лицам</p>
+                </a>
+            </div>
+            <div class="col-2">
+                <a href="" class="menuLink">
+                    <p>Исламские <br> Финансы</p>
+                </a>
+            </div>
+            <div class="col-2">
+                <a href="" class="menuLink">
+                    <p>Офисы и<br> банкоматы</p>
+                </a>
+            </div>
+            <div class="col-2">
+                <a href="" class="menuLink">
+                    <p>Русский</p>
+                </a>
+            </div>
+        </div>
+     </div>
+    <!-- NAVIGATION -->
+    <!-- Menu -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Кредиты
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Онлайн кредит</a></li>
+                      <li><a class="dropdown-item" href="#">Бизнес кредит</a></li> 
+                    </ul>
+                  </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Рассрочка</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Депозиты
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Срочный</a></li>
+                  <li><a class="dropdown-item" href="#">Накопительный</a></li>
+                  <li><a class="dropdown-item" href="#"> Онлайн </a></li> 
+                </ul>
+              </li> 
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Карты
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Срочный</a></li>
+                  <li><a class="dropdown-item" href="#">Накопительный</a></li>
+                  <li><a class="dropdown-item" href="#"> Онлайн </a></li> 
+                </ul>
+              </li> 
+              <li class="nav-item">
+                <a class="nav-link" href="#">MBANK Junior</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">MBANK</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">MBusiness
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">MKassa
+                </a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Я ищу" aria-label=""> 
+            </form>
+          </div>
+        </div>
+      </nav>
+    <!-- Menu -->
+    <!-- Carousel -->
+    <div id="carouselExampleDark" class="carousel carousel-dark slide">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner"> 
+          {% for slid in sliders %}
+          <div class="carousel-item active">
+            <img src="{{slid.img.url}}" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>{{slid.title}}</h5>
+              <p>{{slid.little_text}}</p>
+            </div>
+          </div>
+          {% endfor %} 
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    <!-- Carousel -->
+
+    <!-- Block Cards -->
+     <div class="container mt-5">
+        <div class="row">
+          {% for service in services %}
+            <div class="col-6 mt-3" >
+              {% if service.image %}
+              <div class="card cardImages" style="background-image: url({{service.image.url}}); ">
+                {% else  %}
+                <div class="card cardImages" style="background-image: url(https://img.freepik.com/free-photo/barley-grain-field-sky-full-clouds_181624-37850.jpg); ">
+              {% endif %}
+                    <div class="card-body" style="padding-top: 70px;">
+                      <h5 class="CardTITLE">{{service.title}}</h5> 
+                      <p class="cardTExt">{{service.description}}</p>
+                      <a href="#" class="card-link">Получить</a> 
+                    </div>
+                  </div>
+            </div>
+            {% endfor %}
+            <!-- col --> 
+        </div>
+     </div>
+    <!-- Block Cards -->
+
+    <!-- course valuta and news -->
+    <div class="container mt-5">
+      <div class="row">
+        <!-- col valuta -->
+        <div class="col-6">
+          <div class="card p-4">
+            <div class="row p-3" style="text-align: center;">
+              <div class="col-6">
+                <h1>Курсы валют</h1>
+              </div>
+              <div class="col-6" style="    padding-top: 10px;
+              font-size: 18px;
+              text-transform: uppercase;">
+                <a href="">Подробнее</a>
+              </div>
+              <div class="col-6">
+                <a href=""class="btn btn-light">Наличные</a>
+              </div>
+              <div class="col-6">
+                <a href=""class="btn btn-secondary">Безналичные</a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-3">
+                <ul>
+                  <p>валюта</p>
+                  <li>USD</li>
+                  <li>EUR</li>
+                  <li>RUB</li>
+                  <li>KZT</li>
+                </ul>
+              </div>
+              <div class="col-3">
+                <ul>
+                  <p>Покупка</p>
+                  <li>86.0500</li>
+                  <li>92.5000</li>
+                  <li>0.8600</li>
+                  <li>0.1200</li>
+                </ul>
+              </div>
+              <div class="col-3">
+                <ul>
+                  <p>Продажа</p>
+                  <li>86.5500</li>
+                  <li>93.5000</li>
+                  <li>0.8950</li>
+                  <li>0.1790</li>
+                </ul>
+              </div>
+              <div class="col-3">
+                <ul>
+                  <p>НБКР</p>
+                  <li>84.2000</li>
+                  <li>93.6094</li>
+                  <li>0.9260</li>
+                  <li>0.1763</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- col valuta -->
+         <!-- col news -->
+         <div class="col-6"></div>
+        </div>
+        <!-- col news -->
+    </div>
+    <!-- course valuta and news -->
+
+  <div class="container mt-5" style="background-image: url(https://mbank.kg/_next/image?url=https%3A%2F%2Fmbank.kg%2Fmedia%2Fbanner%2Fbackgrounds%2Fhere23_1.webp&w=1200&q=75); background-size: cover;">
+    <div class="row">
+      <div class="col-6 p-5">
+        <h1 style="color: white; text-transform: uppercase;">Ближайшие банкоматы <br> и отделения</h1>
+        <a href="" class="btn btn-warning" style="padding-left: 50px;padding-right: 50px;">Перейти</a>
+      </div>
+      <div class="col-6">
+        <img src="https://mbank.kg/_next/image?url=https%3A%2F%2Fmbank.kg%2Fmedia%2Fatm%2F188208176209130208184208186208184-01.webp&w=1200&q=75" width="400px" alt="">
+      </div>
+    </div>
+  </div>
+
+  <!-- footer -->
+   <div class="container inputSearch">
+    <div class="row">
+      <div class="col-6 mb-5">
+        <h2>Поиск по сайту</h2>
+        <input type="text" placeholder="Я ищу">
+        <button type="submit">Найти</button>
+      </div>
+      <div class="col-6"></div>
+      <!-- col -->
+      <div class="col-3">
+        <ul>
+          <li><a href="#">Частным клиентам</a></li>
+          <li><a href="#">Платежные карты</a></li>
+        </ul>
+      </div>
+      <div class="col-3">
+        <ul>
+          <li><a href="#">Юридическим лицам</a></li>
+          <li><a href="#">Депозиты</a></li>
+        </ul>
+      </div>
+      <div class="col-3">
+        <ul>
+          <li><a href="#">О банке</a></li>
+          <li><a href="#">Руководство</a></li>
+        </ul>
+      </div>
+      <div class="col-3">
+        <ul>
+          <li><a href="#">Информация</a></li>
+          <li><a href="#">Документы</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="row mt-5 backgIMages">
+      <div class="col-6">
+        <img src="images/frame.webp" width="300px" alt="">
+      </div>
+      <div class="col-6">
+        <img src="images/log1.webp" width="200px" alt="">
+        <ul>
+          <li>
+            <a  target="_blank" href="https://play.google.com/store/apps/details?id=com.maanavan.mb_kyrgyzstan&hl=ru">
+              <img src="images/googlePlay.png" width="150px" style="border-radius: 15px;" alt="">
+            </a>
+          </li>
+          <li style="padding-left: 10px;">
+            <a target="_blank" href="https://apps.apple.com/ru/app/mbank-%D0%B1%D0%B0%D0%BD%D0%BA-%D0%B2-%D1%82%D0%B5%D0%BB%D0%B5%D1%84%D0%BE%D0%BD%D0%B5/id922922121">
+              <img src="images/appstore.png" width="150px" style="border-radius: 15px;" alt="">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!--  -->
+    <div class="row">
+      <div class="col-4"></div>
+      <div class="col-4"></div>
+      <div class="col-4"></div>
+      <p class="mt-5 text-secondary">ОАО «Коммерческий банк КЫРГЫЗСТАН». © 2006-2024, Лицензия №014 НБ КР</p>
+    </div>
+   </div>
+  <!-- footer -->
+
+    <script src="{% static 'bootstrap.bundle.min.js' %}"></script>
+  </body>
+</html>
