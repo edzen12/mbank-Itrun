@@ -1,11 +1,12 @@
 <!doctype html>
+{% load static %}
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>MKassa</title>
-    <link href="bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="mkassa.css">
+    <link href="{% static 'bootstrap.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'mkassa.css' %}">
     <style>
       @media (max-width: 768px) {
     .carousel-inner .carousel-item > div {
@@ -48,9 +49,9 @@
     <!-- header -->
     <div class="container">
       <header class="d-flex flex-wrap justify-content-center py-2 mb-4">
-        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+        <a href="{% url "homepage" %}" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
           <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-          <span class="fs-4"><img src="images/logoMbank.svg" alt=""></span>
+          <span class="fs-4"><img src="{% static 'images/logoMbank.svg' %}" alt=""></span>
           <span class="fs-4" style="padding-left: 50px;"><img src="images/mkassa.svg" width="150px" alt=""></span>
         </a>
   
@@ -69,7 +70,7 @@
       <div class="row">
         <p class="h1P">Принимайте безналичную <br> оплату с MKASSA</p>
         <div class="col-7">
-          <img src="images/постерминал-мкасса-01.webp" width="500px" alt="">
+          <img src="{% static 'images/постерминал-мкасса-01.webp' %}" width="500px" alt="">
         </div>
         <div class="col-5">
           <p>Бесплатно</p>
@@ -173,7 +174,7 @@
   </div>
      <!-- block video -->
 
-<script src="bootstrap.bundle.min.js"></script> 
+<script src="{% static 'bootstrap.bundle.min.js' %}"></script> 
 <script>
   $('#recipeCarousel').carousel({
   interval: 10000

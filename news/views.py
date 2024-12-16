@@ -10,3 +10,6 @@ def homepage(request):
         'sliders':sliders,
     }
     return render(request, 'index.html',context)
+
+def mkassaPage(request): 
+    return render(request, 'mkassa.html')
