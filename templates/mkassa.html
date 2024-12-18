@@ -89,24 +89,14 @@
       <div class="row">
         <p style="font-size: 40px;color: #0046bd;
     font-weight: 900;">Предлагаем удобные способы приема оплаты от клиентов</p>
+      {% for pay in paymet %}
         <div class="col-4">
           <div class="card">
-            <img src="https://mbank.kg/media/mkassa/Frame_2087324765.webp" alt="">
+            <img src="{{pay.img.url}}" alt="">
           </div>
-          <h3>1. Smart POS терминал</h3>
-        </div>
-        <div class="col-4">
-          <div class="card">
-            <img src="https://mbank.kg/media/mkassa/Frame_2087324765-2.webp" alt="">
-          </div>
-          <h3>2. Мобильное приложение</h3>
-        </div>
-        <div class="col-4">
-          <div class="card">
-            <img src="https://mbank.kg/media/mkassa/Frame_2087324765-3.webp" alt="">
-          </div>
-          <h3>3. QR код (наклейка)</h3>
-        </div>
+          <h3>{{pay.title}}</h3>
+        </div> 
+        {% endfor %}
         </div>
       </div>
      <!-- block service -->

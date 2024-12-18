@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from news.models import News,SliderHomepage
+from news.models import News,SliderHomepage, PaymentMethod
 
 
 def homepage(request):
@@ -12,4 +12,11 @@ def homepage(request):
     return render(request, 'index.html',context)
 
 def mkassaPage(request): 
-    return render(request, 'mkassa.html')
+    paymet = PaymentMethod.objects.all()
+    context = {
+        'paymet':paymet
+    }
+    return render(request, 'mkassa.html',context)
+
+def installmentPage(request):
+    return render(request, 'installment_plan.html')
