@@ -41,3 +41,10 @@ class PaymentMethod(models.Model):
     class Meta:
         verbose_name_plural = 'Способы оплаты'
         verbose_name = 'способ оплаты'
+
+
+class Category(models.Model):
+    title = models.CharField(max_length=40, verbose_name="Название категории")
+    img = models.ImageField(upload_to='category')
+
+
