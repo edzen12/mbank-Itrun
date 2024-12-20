@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from news.models import News,SliderHomepage, PaymentMethod, Category
+from news.models import News,SliderHomepage, PaymentMethod, Category, Partners
 
 
 def homepage(request):
@@ -20,7 +20,9 @@ def mkassaPage(request):
 
 def installmentPage(request):
     category = Category.objects.all()
+    patners = Partners.objects.all()
     context = {
         'categories':category, 
+        'patners':patners, 
     }
     return render(request, 'installment_plan.html', context)
