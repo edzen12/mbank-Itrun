@@ -45,6 +45,12 @@ class PaymentMethod(models.Model):
 
 class Category(models.Model):
     title = models.CharField(max_length=40, verbose_name="Название категории")
-    img = models.ImageField(upload_to='category')
+    img = models.CharField(max_length=255, verbose_name="cсылка на фото")
 
+    def __str__(self):
+        return self.title 
+
+    class Meta:
+        verbose_name = 'категорию'
+        verbose_name_plural = 'Категория'
 
