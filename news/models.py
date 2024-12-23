@@ -58,7 +58,10 @@ class Category(models.Model):
 class Partners(models.Model):
     title = models.CharField(max_length=100, verbose_name="Название")
     img = models.CharField(max_length=255, verbose_name="Ссылка на лого")
-    category = models.ManyToManyField(Category, verbose_name="Категории")
+    category = models.ForeignKey(
+        Category, on_delete=models.SET_NULL, null=True,
+        verbose_name="Категории"
+    )
     website = models.CharField(
         max_length=100,blank=True,null=True, verbose_name="Ссылка на сайт") 
     address1 = models.CharField(max_length=105,verbose_name='Адрес №1')

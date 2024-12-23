@@ -77,14 +77,32 @@
         <h3 class="pb-2">Партнеры</h3>
         <!-- col -->
         {% for patn in patners %}
-        <div class="col-3">
+    <div class="col-3">
+        <a type="button" data-bs-toggle="modal" data-bs-target="#{{ patn.title|slugify }}">
             <div class="text-center" style="border:1px solid black; padding: 20px; border-radius: 10px;">
-                <img width="150px" src="{{patn.img}}" alt="">
-                <p>{{patn.title}}</p>
-                <span>{{patn.category}}</span>
+                <img width="150px" src="{{ patn.img }}" alt="">
+                <p>{{ patn.title }}</p>
+                <span>{{ patn.category }}</span>
+            </div>
+        </a>
+    </div>
+    <!-- Модальное окно -->
+    <div class="modal fade" id="{{ patn.title|slugify }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">{{ patn.title }}</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+                <div class="modal-body">
+                    <p>{{patn.address1}}</p>
+                    <p>{{patn.phone1}}</p>
+                </div> 
             </div>
         </div>
-        {% endfor %}
+    </div>
+{% endfor %}
+        
         <!-- col -->
     </div>
  </div>
