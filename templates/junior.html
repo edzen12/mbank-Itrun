@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Вопросы и ответы</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+                {% for vo in vova %}
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#{{ vo.title|slugify }}" aria-expanded="false" aria-controls="flush-collapseOne">
+                      {{vo.title}}
+                    </button>
+                  </h2>
+                  <div id="{{ vo.title|slugify }}" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                        {{vo.description|safe}}
+                    </div>
+                  </div>
+                </div> 
+                {% endfor %}
+              </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

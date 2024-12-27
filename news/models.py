@@ -1,5 +1,5 @@
 from django.db import models
-
+from ckeditor.fields import RichTextField
 
 class SliderHomepage(models.Model):
     title = models.CharField(max_length=100)
@@ -80,3 +80,15 @@ class Partners(models.Model):
     class Meta:
         verbose_name_plural = 'Партнеры'
         verbose_name = 'партнер'
+
+
+class VoVa(models.Model):
+    title = models.CharField(max_length=100, verbose_name="Название вопроса")
+    description = RichTextField()
+
+    def __str__(self):
+        return self.title 
+    
+    class Meta:
+        verbose_name_plural = 'Вопросы и ответы'
+        verbose_name = 'вопрос и ответ'

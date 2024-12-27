@@ -1,5 +1,7 @@
 from django.shortcuts import render
-from news.models import News,SliderHomepage, PaymentMethod, Category, Partners
+from news.models import (
+    News,SliderHomepage, PaymentMethod, 
+    Category, Partners, VoVa)
 
 
 def homepage(request):
@@ -26,3 +28,7 @@ def installmentPage(request):
         'patners':patners, 
     }
     return render(request, 'installment_plan.html', context)
+
+def Mjunior(request):
+    vova = VoVa.objects.all()
+    return render(request, 'junior.html', {'vova':vova})
